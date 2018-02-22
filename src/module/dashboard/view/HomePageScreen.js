@@ -43,7 +43,7 @@ export default class HomePageScreen extends Component {
   onLoad = (index) => {
     const changeList = this.state.checkListImageLoaded;
     changeList[index] = true;
-    this.setState({ checkListImageLoaded: changeList });
+    this.setState({ checkListImageLoaded: changeList })
   }
   renderItem = ({ item, index }) => {
     return (
@@ -64,7 +64,7 @@ export default class HomePageScreen extends Component {
               data={this.getData(1000)}
               renderItem={this.renderItem}
               keyExtractor={this.keyExtractor}
-              initialNumToRender={5}
+              // initialNumToRender={5}
             />
             {/* {this.renderBody()} */}
           </View>

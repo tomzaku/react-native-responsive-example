@@ -1,5 +1,5 @@
-export * from './detail/view/';
-export * from './homepage/view/';
+export * from './dashboard/view';
+export * from './conversation/view/';
 export * from './library/view/';
 export * from './profile/view/';
 export * from './other/view/';

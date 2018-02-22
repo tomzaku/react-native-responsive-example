@@ -19,6 +19,7 @@ const getTabRoute = () => {
       case 'HomePage':
       case 'Profile':
       case 'Library':
+      case 'Contact':
       {
         const {
           title,

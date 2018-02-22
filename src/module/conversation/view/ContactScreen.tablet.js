@@ -6,17 +6,17 @@ import { ThemeColor, ThemeSpacing } from 'Theme';
 
 import ToolBar from '../../common-layout/ToolBar'
 import TwoColumn from '../../../config/navigation/view/tablet/TwoColumn'
-import HomePageScreen from './HomePageScreen'
+import ContactScreen from './ContactScreen'
 
 
-class HomePageTabletScreen extends HomePageScreen {
+class ContactTabletScreen extends ContactScreen {
 
   onPressItem(item) {
     const { navigation } = this.props;
     const resetAction = NavigationActions.reset({
       index: 0,
       actions: [
-        NavigationActions.navigate({ routeName: 'Detail', params: { item } }),
+        NavigationActions.navigate({ routeName: 'ChatPerson', params: { item } }),
       ],
     });
     navigation.dispatch(resetAction);
@@ -24,7 +24,7 @@ class HomePageTabletScreen extends HomePageScreen {
 }
 
 // create a component
-class MyClass extends Component {
+class HomPageTwoColumn extends Component {
   static navigationOptions = ({navigation}) => {
     return {
       header: null,
@@ -33,8 +33,8 @@ class MyClass extends Component {
   leftComponent = (navigation) => {
     return (
       <View style={{flex: 1}}>
-        <ToolBar title={'Dashboard'} style= {{ backgroundColor: ThemeColor.PATIENT_TAB_COLOR }}/>
-        <HomePageTabletScreen navigation={navigation} />
+        <ToolBar title={'Contact'} style= {{ backgroundColor: ThemeColor.PATIENT_TAB_COLOR }}/>
+        <ContactTabletScreen navigation={navigation} />
       
       </View>
     )
@@ -60,4 +60,4 @@ const styles = StyleSheet.create({
 });
 
 //make this component available to the app
-export default MyClass;
+export default HomPageTwoColumn;

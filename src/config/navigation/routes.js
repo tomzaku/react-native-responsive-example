@@ -29,7 +29,6 @@ const router = () => {
       phone: {
         title: 'Detail',
         screen: Screen.DetailScreen,
-
       },
     },
     HomePage: {
@@ -44,6 +43,26 @@ const router = () => {
       tablet: {
         screen: Screen.HomePageTabletScreen,
       }
+    },
+    Contact: {
+      phone: {
+        title: 'Contact',
+        screen: Screen.ContactScreen,
+        icon: 'contacts',
+        tabBarLabel: 'Contact',
+        barBackgroundColor: ThemeColor.PATIENT_TAB_COLOR,
+        headerBackgroundColor: ThemeColor.PATIENT_TAB_COLOR,
+      },
+      tablet: {
+        screen: Screen.ContactTabletScreen,
+      }
+    },
+    ChatPerson: {
+      phone: {
+        title: 'Chat',
+        screen: Screen.ChatPersonScreen,
+      },
+ 
     },
     Library: {
       phone: {

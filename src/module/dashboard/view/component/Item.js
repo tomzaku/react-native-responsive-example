@@ -10,28 +10,33 @@ import {
   Image,
 } from 'react-native';
 import ShimmerPlaceholder from 'react-native-shimmer-placeholder';
-
-var { height, width } = Dimensions.get('window');
+import randomColor from 'randomcolor'
+let { height, width } = Dimensions.get('window');
+const widthDevice = width
 
 export default class Item extends Component {
   shouldComponentUpdate({visible}) {
     return visible !== this.props.visible;
   }
   render() {
-    const { visible, item, onLoad, onPress } = this.props;
-    console.log(">>>");
+    const { visible, item, onLoad, onPress, width=widthDevice, height= 150 } = this.props;
+    const outsideColor = randomColor({luminosity: 'light', })
+    // const centerColor = randomColor({luminosity: 'bright', })
+    const centerColor = 'white'
+
     return (
       <ShimmerPlaceholder
-        duration={500}
+        duration={1600}
         autoRun={true}
-        widthLine={width * 0.8}
+        colorShimmer={[outsideColor, centerColor, outsideColor]}
+        widthShimmer={0.0005}
         width={width}
-        height={150}
+        height={height}
         visible={visible}
       >
         <TouchableOpacity onPress={onPress}>
           <Image
-            style={{ width, height: 150 }}
+            style={{ width, height }}
             source={item}
             onLoad={onLoad}
           />
